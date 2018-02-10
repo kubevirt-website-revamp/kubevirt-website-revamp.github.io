@@ -18,8 +18,8 @@ We are currently driven by
 
 Over the weekend you could have seen our talks at devconf.cz:
 
-- ["Kubernetes Cloud Autoscaler for Isolated Workloads"](https://www.youtube.com/watch?v=BzY2mzeVjrw) by @rmohr
-- ["Outcast: Virtualization in a container world?"](https://www.youtube.com/watch?v=avxBRRwRa-8) by @fabiand
+- https://www.youtube.com/watch?v=BzY2mzeVjrw["Kubernetes Cloud Autoscaler for Isolated Workloads"] by @rmohr
+- https://www.youtube.com/watch?v=avxBRRwRa-8["Outcast: Virtualization in a container world?"] by @fabiand
 
 Within the last weeks we achieved to:
 
