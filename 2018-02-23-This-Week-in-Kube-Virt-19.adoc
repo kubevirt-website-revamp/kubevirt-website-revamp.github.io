@@ -22,6 +22,12 @@ Within the last two weeks we achieved to:
    https://github.com/kubevirt/kubevirt/pull/671)
 - Support for native pod networking for VMs (@vladikr)
   (https://github.com/kubevirt/kubevirt/pull/686)
+- Many patches to improve kubevirt-ansible usability
+  (https://github.com/kubevirt/kubevirt-ansible/pulse/monthly)
+- Introduce the kubernetes-device-plugins (@mpolednik)
+  (https://github.com/kubevirt/kubernetes-device-plugins/)
+- Introduce the kubernetes-device-plugin for bridge networking (@mpolednik)
+  (https://github.com/kubevirt/kubernetes-device-plugins/pull/4)
 
 - Add vendor/ tree (@davidvossel)
   (https://github.com/kubevirt/kubevirt/pull/715)
@@ -35,7 +41,8 @@ Within the last two weeks we achieved to:
 
 In addition to this, we are also working on:
 
-- Implement VirtualMachinePresets (@stu-gott) (https://github.com/kubevirt/kubevirt/pull/652)
+- Implement VirtualMachinePresets (@stu-gott)
+(https://github.com/kubevirt/kubevirt/pull/652)
 - Implement OfflineVirtualMachines (@pkotas) (https://github.com/kubevirt/kubevirt/pull/667)
 - Expose CPU requirements in VM pod (@vladikr) (https://github.com/kubevirt/kubevirt/pull/673)
 
