@@ -182,21 +182,36 @@ hr {
 
 .nav-link {
   font-size: 20px;
-  margin-right: 0px;
-  padding-right: 15px !important; }
+  margin-right: 0px; }
   .nav-link a {
     font-weight: 500; }
 
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
   background-color: #cfd6da; }
 
+/*
 #navbarNav {
-  text-align: right; }
-
-.blogTitle {
-  font-size: 30px;
-  padding-top: 10px; }
-
+  text-align: right;
+  .navbar {
+    display: none;
+    text-align: right;
+  }
+}
+.site-nav  {
+  padding-top: 10px  !important;
+}
+@media screen and (max-width: 600px) {
+  .site-nav {
+    background-color: $kubevirt-fourth-color !important;
+    z-index: 1;
+    top: 0px  !important;
+  }
+  .navbar {
+    display: block !important;
+    text-align: right  !important;
+    padding: .4rem 0rem   !important;
+  }
+}*/
 .blogAuthor {
   color: #666666;
   font-weight: 400; }
@@ -204,6 +219,13 @@ hr {
 .site-nav {
   float: right;
   line-height: 56px; }
+  .site-nav .navbar-nav .nav-link {
+    padding-right: 10px;
+    padding-left: 10px;
+    top: 6px; }
+  .site-nav .navbar {
+    display: block;
+    text-align: right; }
   .site-nav .menu-icon {
     display: none; }
   .site-nav .page-link {
@@ -214,34 +236,13 @@ hr {
   @media screen and (max-width: 600px) {
     .site-nav {
       position: absolute;
-      top: 9px;
-      right: 30px;
-      background-color: #fdfdfd;
-      border: 1px solid #e8e8e8;
+      right: 5px;
+      background-color: #dee6ea;
       border-radius: 5px;
-      text-align: right; }
-      .site-nav .menu-icon {
-        display: block;
-        float: right;
-        width: 36px;
-        height: 26px;
-        line-height: 0;
-        padding-top: 10px;
-        text-align: center; }
-        .site-nav .menu-icon > svg {
-          width: 18px;
-          height: 15px; }
-          .site-nav .menu-icon > svg path {
-            fill: #424242; }
-      .site-nav .trigger {
-        clear: both;
-        display: none; }
-      .site-nav:hover .trigger {
-        display: block;
-        padding-bottom: 5px; }
+      text-align: right;
+      z-index: 1; }
       .site-nav .page-link {
-        display: block;
-        padding: 5px 10px; } }
+        display: block; } }
 
 #carouselExampleControls {
   height: 300px;
