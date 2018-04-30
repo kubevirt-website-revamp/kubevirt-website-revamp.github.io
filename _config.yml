@@ -1,0 +1,17 @@
+# Site settings
+title: kubevirt.io
+email: non@none.com
+description: > # this means to ignore newlines until "baseurl:"
+  Virtual Machine Management on Kubernetes
+baseurl: "/kubevirt" # the subpath of your site, e.g. /blog/
+url: "http://www.kubevirt.io/" # the base hostname & protocol for your site
+twitter_username: kubevirt
+github_username:  kubevirt
+irc: kubevirt@irc.freenode.net
+Mailinglist: https://groups.google.com/forum/#!forum/kubevirt-dev
+events: 18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com
+
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:title:output_ext

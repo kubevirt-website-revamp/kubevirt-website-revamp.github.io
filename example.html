@@ -1,0 +1,45 @@
+---
+layout: default
+items:
+  - Bottle
+  - Saxophones
+  - Microphones
+  - Mandolins
+
+products:
+  - name: haha
+    price: 250
+    desc: strong
+
+  - name: baba
+    price: 350
+    desc: fail
+
+  - name: dada
+    price: 150
+    desc: mmm
+---
+
+<h1>Example with variable</h1>
+<div>general data: {{ site.baseurl }}</div>
+<div>page data: {{ page.layout }}</div>
+
+<ul>
+{% for item in page.items %}
+  <li>{{ item }}</li>
+{% endfor %}
+</ul>
+
+<h1>Example with variable</h1>
+<ul>
+{% for item in page.products %}
+  <li>{{ item.name }} {{ item.desc }}</li>
+{% endfor %}
+</ul>
+
+<h1>Example with external variable</h1>
+<ul>
+{% for item in site.data.members %}
+  <li>{{ item.name }} {{ item.desc }}</li>
+{% endfor %}
+</ul>
