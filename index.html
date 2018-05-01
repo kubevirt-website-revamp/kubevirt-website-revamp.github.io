@@ -27,38 +27,43 @@ layout: homepage
   <div class="wrapper">
     <div class="container">
       <div class="row">
-        <div id="why" class="col">
+        <div id="why">
           <h1>Why Kubevirt ?</h1>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages. Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          {% for p in site.pages %}
+            {% if p.title == "Why Kubevirt" %}
+                {{ p.summary }}
+            {% endif %}
+          {% endfor %}
+          {% include readmore.html href_link="why_kubevirt" %}
         </div>
-        <div id="usecases" class="col">
+
+        <div id="usecases">
           <h1>Use Cases</h1>
           <p>
-            <h5>VM Administrator, Come see how Kubevirt ease your management.</h5>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
-            <div class="readmore"><a href="use_cases">READ MORE</a></div>
+            <h4>VM Administrator, Come see how Kubevirt ease your management.</h4>
+            Lorem Ipsum is simply dummy text of the printing an
+            d typesetting industry. Lorem Ipsum has been the industry's standard.
+            {% include readmore.html href_link="use_cases#usecase_1" %}
             <hr style="margin-top: 20px; margin-bottom: 20px;"/>
           </p>
           <p>
-            <h5>Are you A Developer? Your DB in a VM.</h5>
+            <h4>Are you A Developer? Your DB in a VM.</h4>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            <div class="readmore"><a href="use_cases">READ MORE</a></div>
+            {% include readmore.html href_link="use_cases#usecase_2" %}
             <hr style="margin-top: 20px; margin-bottom: 20px;"/>
           </p>
           <p>
-            <h5>Application Developer - Emulate any device a VM</h5>
+            <h4>Application Developer - Emulate any device a VM</h4>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-            <div class="readmore"><a href="use_cases">READ MORE</a></div>
+            {% include readmore.html href_link="use_cases#usecase_3" %}
             <hr style="margin-top: 20px; margin-bottom: 20px;"/>
           </p>
           <p>
-            <h5>Familliar with Kubernetes but missing consolidation VMs?</h5>
+            <h4>Familliar with Kubernetes but missing consolidation VMs?</h4>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
-            <div class="readmore"><a href="use_cases">READ MORE</a></div>
-            <hr style="margin-top: 20px;"/>
+            {% include readmore.html href_link="use_cases#usecase_4" %}
+            <hr style="margin-top: 20px; margin-bottom: 20px;"/>
           </p>
-
-
         </div>
       </div>
     </div>
@@ -103,7 +108,10 @@ layout: homepage
               <div class="blogTitle"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
               <span class="blogAuthor">by {{ post.author }} - </span><span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
               <div> {{ post.description }} </div>
-              <div><a class="readmore" href="{{ post.url | prepend: site.baseurl }}">READ MORE</a></div>
+                {% capture readmorelink %}
+                  {{ post.url | prepend: site.baseurl }}
+                {% endcapture %}
+                {% include readmore.html href_link= readmorelink %}
             </li>
             <hr/>
           {% endfor %}

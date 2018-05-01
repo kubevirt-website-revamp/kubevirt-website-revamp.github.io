@@ -181,7 +181,7 @@ hr {
   padding: 0px; }
 
 .nav-link {
-  font-size: 20px;
+  font-size: 18px;
   margin-right: 0px; }
   .nav-link a {
     font-weight: 500; }
@@ -216,13 +216,17 @@ hr {
   color: #666666;
   font-weight: 400; }
 
+.blogTitle {
+  font-size: 30px; }
+
 .site-nav {
   float: right;
   line-height: 56px; }
   .site-nav .navbar-nav .nav-link {
-    padding-right: 10px;
-    padding-left: 10px;
-    top: 6px; }
+    padding-right: 11px;
+    padding-left: 11px;
+    top: 6px;
+    font-weight: 400; }
   .site-nav .navbar {
     display: block;
     text-align: right; }
