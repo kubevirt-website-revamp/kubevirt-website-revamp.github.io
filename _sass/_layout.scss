@@ -14,7 +14,7 @@
 }
 
 .site-title {
-    background-image: url("./../assets/images/header_logo.png");
+    background-image: url("./../../assets/images/header_logo.png");
     background-position: center;
     background-repeat: no-repeat;
     float: left;
@@ -156,6 +156,9 @@
   font-size: 10px;
   font-weight: bold;
   float: right !important;
+  ::after {
+    float: left;
+  }
 }
 /**
  * Site footer
@@ -268,7 +271,7 @@
 }
 
 .post-title {
-    font-size: 42px;
+    font-size: 50px;
     letter-spacing: -1px;
     line-height: 1;
 
@@ -308,4 +311,24 @@ h2, h3, h4, h5 {
             font-size: 18px;
         }
     }
+}
+.twitter-share-button {
+      background-image: url("./../assets/images/twitter_icon.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      font-size: 40px;
+      color: white;
+      border-radius: 7px;
+      background-color: #1b95e0;
+      padding-left: 46px;
+      padding-right: 10px;
+      padding-bottom: 7px;
+      span {
+        font-size: 20px;
+      }
+      :hover {
+        color: white;
+        text-decoration: underline;
+        text-decoration-color: white;
+      }
 }

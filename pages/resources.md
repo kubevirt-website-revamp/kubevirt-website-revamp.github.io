@@ -2,7 +2,7 @@
 layout: page
 title: Resources
 permalink: /resources/install
-order: 3
+order: 4
 ---
 
-This is the resource page
+How do I hook to the list in http://docs.kubevirt.io ?
