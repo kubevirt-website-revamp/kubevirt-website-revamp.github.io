@@ -1,3 +1,8 @@
+---
+layout: post
+author: fabiand
+description: This is a weekly update from the KubeVirt team - including the holiday backlog update.
+---
 This is a weekly update from the KubeVirt team - including the holiday
 backlog update.
 

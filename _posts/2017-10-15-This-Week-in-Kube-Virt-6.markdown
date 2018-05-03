@@ -1,3 +1,8 @@
+---
+layout: post
+author: fabiand
+description: This is the sixth weekly update from the KubeVirt team.
+---
 This is the sixth weekly update from the KubeVirt team.
 
 This week you could watch us at:

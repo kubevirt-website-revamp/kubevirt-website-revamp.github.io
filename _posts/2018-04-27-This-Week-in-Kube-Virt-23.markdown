@@ -1,3 +1,8 @@
+---
+layout: post
+author: fabiand
+description: This is a close-to weekly update from the KubeVirt team.
+---
 This is a close-to weekly update from the KubeVirt team.
 
 In general there is now more work happening outside of the core kubevirt
