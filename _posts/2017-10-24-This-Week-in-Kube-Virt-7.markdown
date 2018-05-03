@@ -1,3 +1,8 @@
+---
+layout: post
+author: fabiand
+description: This is the seventh weekly update from the KubeVirt team.
+---
 This is the seventh weekly update from the KubeVirt team.
 
 This week you can read more or speak to us at:

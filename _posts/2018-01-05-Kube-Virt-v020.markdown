@@ -1,3 +1,8 @@
+---
+layout: post
+author: fabiand
+description: This release follows v0.1.0 and consists of 131 changes, contributed by 6 people, leading to 148 files changed, 9096 insertions(+), 5871 deletions(-).
+---
 This release follows v0.1.0 and consists of 131 changes, contributed by
 6 people, leading to 148 files changed, 9096 insertions(+), 5871
 deletions(-).

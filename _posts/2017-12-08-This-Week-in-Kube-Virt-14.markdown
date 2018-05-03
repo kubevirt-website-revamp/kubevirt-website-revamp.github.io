@@ -1,3 +1,8 @@
+---
+layout: post
+author: fabiand
+description: This is a weekly update from the KubeVirt team.
+---
 This is a weekly update from the KubeVirt team.
 
 We are currently driven by
