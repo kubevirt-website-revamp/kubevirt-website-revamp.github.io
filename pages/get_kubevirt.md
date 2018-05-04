@@ -5,22 +5,18 @@ permalink: /get_kubevirt/
 order: 2
 ---
 
-# KubeVirt on MiniKube {#minikube}
+# KubeVirt Quickstart
+
+This demo will deploy [KubeVirt](https://www.kubevirt.io) on an existing Kubernetes (1.9 or
+later) or OpenShift Origin (3.9 or later) cluster. For a quick way to bring up a Kubernetes or OpenShift Origin cluster, see [Minikube](https://github.com/kubernetes/minikube/) and [Minishift](https://www.openshift.org/minishift/).
+
 [![Build Status](https://travis-ci.org/kubevirt/demo.svg?branch=master)](https://travis-ci.org/kubevirt/demo)
-
-## KubeVirt Demo
-
-This demo will deploy [KubeVirt](https://www.kubevirt.io) on an existing
-[minikube](https://github.com/kubernetes/minikube/) with Kubernetes 1.9 or
-later.
 
 ## Quickstart
 
 ### Deploy KubeVirt
 
-This demo assumes that [minikube](https://github.com/kubernetes/minikube/) is up and running and `kubectl` available on your system. If not, then please take a look at the guide [below](#appendix-deploying-minikube)
-
-With minikube running, you can easily deploy KubeVirt:
+KubeVirt deploys as an add-on to a Kubernetes (1.9 or later) cluster, using the `kubectl` tool and the following manifest file:
 
 ```bash
 $ export VERSION=v0.4.1
@@ -28,9 +24,22 @@ $ kubectl create \
     -f https://github.com/kubevirt/kubevirt/releases/download/$VERSION/kubevirt.yaml
 ```
 
-> **Note:** The initial deployment to a new minikube instance can take
+> **Note:** The initial deployment to a new cluster can take
 > a long time, because a number of containers have to be pulled from the
 > internet. Use `watch kubectl get --all-namespaces pods` to monitor the progress.
+
+#### Deploying KubeVirt on OpenShift Origin
+
+On OpenShift Origin, the following [SCCs](https://docs.openshift.com/container-platform/3.9/admin_guide/manage_scc.html) need to be added prior kubevirt.yaml deployment:
+
+```
+$ oc adm policy add-scc-to-user privileged system:serviceaccount:kube-system:kubevirt-privileged
+$ oc adm policy add-scc-to-user privileged system:serviceaccount:kube-system:kubevirt-controller
+$ oc adm policy add-scc-to-user privileged system:serviceaccount:kube-system:kubevirt-infra
+
+$ export VERSION=v0.4.1
+$ oc apply -f https://github.com/kubevirt/kubevirt/releases/download/${VERSION}/kubevirt.yaml
+```
 
 ### Install virtctl
 
@@ -104,8 +113,3 @@ $ minikube start \
 ```
 
 3. Install `kubectl` via a package manager or [download](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-binary-via-curl) it
-
----
-
-# KubeVirt on an existing Kubernetes cluster {#kubernetes_cluster}
-No content yet...
