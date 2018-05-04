@@ -56,19 +56,14 @@ With virtualized workloads placed directly in development workflows, teams can d
         <div class="col-4">
           <img src="./assets/images/banner_kubevirtdemo.gif">
         </div>
-        <a href="get_kubevirt#install_1" class="col">
-          <div class="tryit_box">
-            <div>Install KubeVirt on a <b>scratch Fedora / CentOS VM</b></div>
-          </div>
-        </a>
         <a href="get_kubevirt#minikube" class="col">
           <div class="tryit_box">
             <div>KubeVirt on <b>MiniKube</b></div>
           </div>
         </a>
-        <a href="get_kubevirt#install_3" class="col">
+        <a href="get_kubevirt#kubernetes_cluster" class="col">
           <div class="tryit_box">
-            <div>KubeVirt on an <b>existing Kubernetes cluster</b></div>
+            <div>KubeVirt on an<br/><b>existing Kubernetes cluster</b></div>
           </div>
         </a>
       </div>
@@ -124,7 +119,7 @@ With virtualized workloads placed directly in development workflows, teams can d
     <div class="container">
       <div>
         <ul class="post-list">
-          {% for post in site.posts %}
+          {% for post in site.posts limit:3 %}
             <li>
               <div class="blogTitle"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
               <span class="blogAuthor">by {{ post.author }} - </span><span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
@@ -136,18 +131,8 @@ With virtualized workloads placed directly in development workflows, teams can d
             </li>
           {% endfor %}
         </ul>
+        <h5><a href="/blog">Read all BLOGS</a></h5><hr/>
         <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="twitter" class="page-content">
-  <div class="wrapper">
-    <h1>Twitter</h1>
-    <div class="container">
-      <div style="width:600px; height:500px; overflow: auto;">
-        <a class="twitter-timeline" href="https://twitter.com/kubevirt?ref_src=twsrc%5Etfw">Tweets by kubevirt</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
     </div>
   </div>

@@ -5,11 +5,6 @@ permalink: /get_kubevirt/
 order: 2
 ---
 
-# Install KubeVirt on a scratch Fedora / CentOS VM  {#install_1}
-No content yet...
-
----
-
 # KubeVirt on MiniKube {#minikube}
 [![Build Status](https://travis-ci.org/kubevirt/demo.svg?branch=master)](https://travis-ci.org/kubevirt/demo)
 
@@ -112,5 +107,5 @@ $ minikube start \
 
 ---
 
-# KubeVirt on an existing Kubernetes cluster {#install_3}
+# KubeVirt on an existing Kubernetes cluster {#kubernetes_cluster}
 No content yet...

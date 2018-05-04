@@ -90,7 +90,7 @@
 }
 
 .blogTitle {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .site-nav {
@@ -331,4 +331,19 @@ h2, h3, h4, h5 {
         text-decoration: underline;
         text-decoration-color: white;
       }
+}
+.footerIcon {
+   font-weight: 600; width:60px; height:60px;
+    color: white !important;
+    padding: 12px;
+    margin: 5px;
+}
+.icon > svg {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  path {
+    fill: white;
+  }
 }
