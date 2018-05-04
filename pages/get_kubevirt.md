@@ -10,10 +10,6 @@ order: 2
 This demo will deploy [KubeVirt](https://www.kubevirt.io) on an existing Kubernetes (1.9 or
 later) or OpenShift Origin (3.9 or later) cluster. For a quick way to bring up a Kubernetes or OpenShift Origin cluster, see [Minikube](https://github.com/kubernetes/minikube/) and [Minishift](https://www.openshift.org/minishift/).
 
-[![Build Status](https://travis-ci.org/kubevirt/demo.svg?branch=master)](https://travis-ci.org/kubevirt/demo)
-
-## Quickstart
-
 ### Deploy KubeVirt
 
 KubeVirt deploys as an add-on to a Kubernetes (1.9 or later) cluster, using the `kubectl` tool and the following manifest file:
@@ -90,8 +86,6 @@ $ ./virtctl console testvm
 # Note: Requires `remote-viewer` from the `virt-viewer` package.
 $ ./virtctl vnc testvm
 ```
-
-## Next steps
 
 ### User Guide
 
