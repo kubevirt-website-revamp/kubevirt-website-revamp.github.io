@@ -113,3 +113,113 @@ $ minikube start \
 ```
 
 3. Install `kubectl` via a package manager or [download](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-binary-via-curl) it
+---
+
+# KubeVirt on an existing Kubernetes cluster {#install_3}
+
+If you already have a Kubernetes cluster, you can use [kubevirt-ansible](https://github.com/kubevirt/kubevirt-ansible) to deploy KubeVirt.
+
+First clone the kubevirt-ansible repo on your master Kubernetes node.
+
+```bash
+git clone https://github.com/kubevirt/kubevirt-ansible
+cd kubevirt-ansible
+```
+
+## KubeVirt with no additional storage
+
+To install KubeVirt without adding additional storage capabilities:
+
+```bash
+ansible-playbook -i localhost -e cluster=k8s -e storage_role=storage-none playbooks/kubevirt.yml 
+```
+
+## KubeVirt with storage environment for development and testing
+
+KubeVirt can also be installed with a self-contained storage environment, 
+using Ceph and Cinder, that is geared for non-production use. To install 
+KubeVirt with the demo storage environment, first edit the inventory file 
+and populate the section named "masters", "etcd", and "nodes".
+
+```
+# inventory
+# BEGIN CUSTOM SETTINGS
+[masters]
+# Your master FQDN
+
+[etcd]
+# Your etcd FQDN
+
+[nodes]
+# Your nodes FQDN's
+
+[nfs]
+# Your nfs server FQDN
+
+[glusterfs]
+# Your glusterfs nodes FQDN
+# Each node should have the "glusterfs_devices" variable, which
+# points to the block device that will be used by gluster.
+
+#
+# If you run openshift deployment
+# You can add your master as schedulable node with option openshift_schedulable=true
+# Add at least one node with lable to run on it router and docker containers
+# openshift_node_labels="{'region': 'infra','zone': 'default'}"
+# END CUSTOM SETTINGS
+```
+
+Once you have your inventory file filled in:
+
+```bash
+ansible-playbook -i inventory -e cluster=k8s -e storage_role=storage-demo playbooks/kubevirt.yml 
+```
+
+## KubeVirt with GlusterFS and Heketi storage environment 
+
+To install GlusterFS and Heketi on Kubernetes, follow the setup guide in
+ [gluster-kubernetes repo](https://github.com/gluster/gluster-kubernetes).
+You will need to configure the admin key with gk-deploy and at end of the 
+install note the Heketi URL.
+
+Once you have GlusterFS and Heketi installed on your Kubernetes cluster, 
+you can deploy KubeVirt with the storage-glusterfs role to setup a Secret 
+and a StorageClass to allow you to provision Persistent Volume Claims to 
+store your VM images.
+
+First edit the inventory file and populate the sections "master", "etcd",
+"nodes", and "glusterfs".
+
+```bash
+# inventory
+# BEGIN CUSTOM SETTINGS
+[masters]
+# Your master FQDN
+
+[etcd]
+# Your etcd FQDN
+
+[nodes]
+# Your nodes FQDN's
+
+[nfs]
+# Your nfs server FQDN
+
+[glusterfs]
+# Your glusterfs nodes FQDN
+# Each node should have the "glusterfs_devices" variable, which
+# points to the block device that will be used by gluster.
+
+#
+# If you run openshift deployment
+# You can add your master as schedulable node with option openshift_schedulable=true
+# Add at least one node with lable to run on it router and docker containers
+# openshift_node_labels="{'region': 'infra','zone': 'default'}"
+# END CUSTOM SETTINGS
+```
+
+Then run this playbook, substituting the namespaces and heketi_url to
+match your environment:
+
+```
+ansible-playbook -i inventory -e cluster=k8s -e storage_role=storage-glusterfs -e namespace=kube-system -e glusterfs_namespace=kube-system -e glusterfs_name= -e heketi_url=http://10.32.0.4:8080 playbooks/kubevirt.yml
