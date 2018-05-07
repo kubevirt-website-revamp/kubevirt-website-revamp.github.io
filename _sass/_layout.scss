@@ -30,15 +30,17 @@
 
 .tryit_box {
   background-color: white;
-  border: 2px solid $kubevirt-primary-color;
   text-align: center;
   border-radius: 8px;
   margin: 20px;
   padding: 10px;
-  height: 120px;
+  border: 1px solid white;
   div {
     font-weight: 400;
   }
+}
+.tryit_box:hover {
+  border: 1px solid $kubevirt-primary-color;
 }
 
 .fix-header {
@@ -152,6 +154,12 @@
 #demo {
   background-color: $kubevirt-secondary-color;
 }
+.demo_banner {
+  background-color: $kubevirt-primary-color;
+  color: white;
+  padding: 5px;
+}
+
 .readmore {
   font-size: 10px;
   font-weight: bold;
