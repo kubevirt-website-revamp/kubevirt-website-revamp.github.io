@@ -15,9 +15,14 @@ order: 4
               <div class="blogTitle"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
               <span class="blogAuthor">by {{ post.author }} - </span><span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
               <article class="post-content">
-                {{ post.content }}
+                 {{ post.content | truncatewords:75}}
+
+                {% capture readmorelink %}
+                  {{ post.url | prepend: site.baseurl }}
+                {% endcapture %}
+                {% include readmore.html href_link= readmorelink %}
               </article>
-                {% include share_twitter.html text = post.title url =  post.url %}
+
             </li>
           {% endfor %}
         </ul>
